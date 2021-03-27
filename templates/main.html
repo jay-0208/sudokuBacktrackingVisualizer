@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sudoku</title>
+</head>
+<body>
+<table id ="tb" height="150px" width="150px" border="1px">
+  <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+  </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+  </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+  </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+  </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+  </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+  </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+  </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+  </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+  </tr>
+    <br><button type="button" onclick="result()">solution</button>
+
+</table>
+<script>
+    var value={{ js | safe}}
+    console.log(value)
+    var table = document.getElementById('tb')
+    for (let i=0;i< value[1].length;i++)
+    {
+        var r=value[1][i][0];
+        var c=value[1][i][1];
+
+        tb.rows[r].cells[c].innerHTML = value[1][i][2];
+    }
+    function result()
+    {
+    if (value[0]==0)
+    {
+    alert('no solution available');
+    return;
+    }
+    for (let i=0;i< value[2].length;i++)
+    {
+    setTimeout(function(){
+       tb.rows[value[2][i][0]].cells[value[2][i][1]].innerHTML = value[2][i][2];    },i*80);
+    }
+    }
+</script>
+
+</body>
+</html>
