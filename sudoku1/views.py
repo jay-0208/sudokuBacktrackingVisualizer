@@ -37,20 +37,20 @@ def home(request):
     it = 0
     ans = True
     path=[]
-    while (it < len(emp)):
+   while (it < len(emp)):
         for i in range(bit[emp[it][0]][emp[it][1]], s + 1):
             state = check(x, emp[it][0], emp[it][1], s, i, sr)
             if state == True:
                 bit[emp[it][0]][emp[it][1]] = i
                 x[emp[it][0]][emp[it][1]] = i
 
-                path.append([emp[it][0],emp[it][1],i])
+                path.append([emp[it][0],emp[it][1],str(i)])
                 it += 1
                 break
             elif i == s:
                 bit[emp[it][0]][emp[it][1]] = 1
                 x[emp[it][0]][emp[it][1]] = -1
-                path.append([emp[it][0], emp[it][1], i])
+                path.append([emp[it][0], emp[it][1], ""])
                 it -= 1
         if it == -1:
             ans = False
@@ -58,7 +58,7 @@ def home(request):
     print(ans)
     print(x)
     if ans==True:
-        js=[1,square,path]
+        js=[1,square,path,x,bit]
         b={'js' : js}
         return render(request, 'main.html',b)
     else:
