@@ -37,7 +37,7 @@ def home(request):
     it = 0
     ans = True
     path=[]
-   while (it < len(emp)):
+    while (it < len(emp)):
         for i in range(bit[emp[it][0]][emp[it][1]], s + 1):
             state = check(x, emp[it][0], emp[it][1], s, i, sr)
             if state == True:
